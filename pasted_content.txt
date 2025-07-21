@@ -1,0 +1,137 @@
+🎯 1. Estratégia e lógica de negociação
+Defina sua estratégia antes de programar: ativos negociados, timeframe, lógica de entrada (ex.: RSI, MACD, médias móveis), tamanho das posições, regras de saída, stop-loss, stop diário, martingale ou não, limite de operação por dia etc 
+Reddit
++7
+GoLinuxCloud
++7
+Reddit
++7
+.
+
+Documente a lógica de forma clara — qual sinal gera CALL ou PUT, quando evitar operar, qual o comportamento após perdas consecutivas etc 
+Digital Take
++1
+DocsBot AI
++1
+.
+
+2. Ambiente de desenvolvimento e bibliotecas
+Python 3.8+ e gerenciador de pacotes pip ou virtualenv 
+Bot App
+.
+
+Instale bibliotecas essenciais:
+
+requests (requisições HTTP / WebSocket),
+
+pandas e numpy (manipulação de dados),
+
+ta‑lib ou alternativas (ex.: pandas‑ta) para indicadores técnicos,
+
+ferramentas de automação de tela (se for usar scraping visual): pyautogui, opencv, pytesseract, PIL etc 
+Best BOB
++7
+DocsBot AI
++7
+DocsBot AI
++7
+GitHub
+.
+
+3. Dados do mercado — acesso à corretora
+Escolha de corretora que ofereça API formal para negociação de opções binárias, como a Deriv, que fornece endpoints via WebSocket/JSON para colocar ordens, gerenciar conta, receber preços e contratos disponíveis (Digital Options, Multipliers etc.) 
+Reddit
++4
+Best BOB
++4
+Reddit
++4
+.
+
+Verifique a documentação oficial da corretora (API tokens, limites de taxas, timeout de conexão, bibliotecas cliente em Python, regras de uso) 
+Best BOB
+.
+
+É importante também permitir integração com corretoras diferentes desde que cada uma ofereça API similar.
+
+4. Backtesting e simulação
+Obtenção de dados históricos (2–3 anos ou mais) relacionados ao seu timeframe de interesse.
+
+Uso de ferramentas como Backtesting.py, Zipline, ou frameworks customizados para validar a estratégia antes de operar ao vivo 
+Reddit
++1
+Reddit
++1
+Reddit
++8
+Wunder Trading
++8
+GoLinuxCloud
++8
+.
+
+Simule custos reais: comissões, slippage, latência, falhas de ordem etc 
+Wunder Trading
+.
+
+5. Execução de trades
+Funções para conectar com a API da corretora: enviar ordens (CALL/PUT), verificar estado das posições, saldos, cancelar ordens etc.
+
+Lógica de reconexão (pings no WebSocket), tratamento de erros e timeouts 
+DocsBot AI
+.
+
+Se a corretora não oferecer API, considere automação via tela com pyautogui + OCR, mas isso é menos seguro e menos confiável 
+GitHub
+.
+
+6. Gestão de risco e controle operacional
+Limites de perda/ganho por sessão (stop-loss diário, meta de lucro).
+
+Regras de dimensionamento de aposta (percentual fixo do saldo ou lotes dinâmicos).
+
+Contagem de perdas consecutivas para interromper operações.
+
+Desligar ou pausar o bot durante grandes notícias ou mercados voláteis 
+DocsBot AI
++12
+Digital Take
++12
+DocsBot AI
++12
+.
+
+7. Registro (logs) e monitoramento
+Salve logs detalhados para cada operação: hora, direção (CALL/PUT), resultado, saldo antes e depois, indicadores usados etc.
+
+Gere relatórios periódicos com métricas de performance (drawdown, taxa de acerto, retorno, sharp ratio etc.).
+
+Monitoramento em tempo real ou alertas (e‑mail, Telegram) sobre erros ou hits em limites operacionais 
+Wunder Trading
+.
+
+8. Infraestrutura e deploy
+Ambiente de execução:
+
+Local (computador pessoal, IDE como VS Code, PyCharm ou notebook) ou
+
+Servidor/cloud para bot rodar 24/7.
+
+Controle de versão com Git, e organização do projeto (pasta de dados, logs, configuração, código) 
+Reverb Time Mag
++1
+Wikipedia
++1
+Bot App
++4
+Reddit
++4
+DocsBot AI
++4
+DocsBot AI
+.
+
+Se usar automação de tela, garanta resoluções e layout estáveis da interface da corretora 
+GitHub
+Reverb Time Mag
+.

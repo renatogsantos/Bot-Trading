@@ -1,0 +1,59 @@
+{
+  "broker": {
+    "name": "deriv",
+    "app_id": "YOUR_APP_ID",
+    "api_token": "YOUR_API_TOKEN",
+    "demo_mode": true
+  },
+  "trading": {
+    "assets": ["R_10", "R_25", "R_50", "R_75", "R_100"],
+    "default_expiry": 5,
+    "default_stake": 10.0,
+    "min_confidence": 0.7,
+    "check_interval": 30
+  },
+  "strategy": {
+    "rsi_oversold": 30,
+    "rsi_overbought": 70,
+    "use_macd": true,
+    "use_bollinger_bands": true,
+    "use_moving_averages": true
+  },
+  "risk_management": {
+    "initial_balance": 1000.0,
+    "max_daily_loss": 100.0,
+    "max_daily_trades": 50,
+    "max_consecutive_losses": 5,
+    "max_drawdown_percent": 20.0,
+    "min_balance": 100.0,
+    "base_stake_percent": 2.0,
+    "max_stake_percent": 5.0,
+    "min_stake": 1.0,
+    "max_stake": 100.0
+  },
+  "logging": {
+    "log_file": "logs/bot_activity.log",
+    "level": "INFO",
+    "max_file_size": 5242880,
+    "backup_count": 5
+  },
+  "alerts": {
+    "email_enabled": false,
+    "email_smtp_server": "smtp.gmail.com",
+    "email_port": 587,
+    "email_username": "your_email@gmail.com",
+    "email_password": "your_password",
+    "telegram_enabled": false,
+    "telegram_bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+    "telegram_chat_id": "YOUR_CHAT_ID"
+  },
+  "backtesting": {
+    "data_source": "csv",
+    "data_path": "data/historical_data.csv",
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "commission": 0.0,
+    "slippage": 0.0
+  }
+}
+
